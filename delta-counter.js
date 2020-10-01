@@ -41,5 +41,9 @@ counters[1].merge(delta0)
 counters[2].merge(delta0)
 counters[2].merge(delta1)
 
+// in fact, the delta states don't require "exactly-once" delivery
+counters[0].merge(delta1)
+counters[0].merge(delta1)
+
 console.log(counters.map(counter => counter.value())) // all counters show 2
 

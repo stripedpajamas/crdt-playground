@@ -52,5 +52,9 @@ counters[0].merge(counters[1].getState())
 counters[1].merge(counters[0].getState())
 counters[2].merge(counters[0].getState())
 
+// in fact, the states don't require "exactly-once" delivery
+counters[0].merge(counters[1].getState())
+counters[0].merge(counters[1].getState())
+
 console.log(counters.map(counter => counter.value())) // all counters show 2
 

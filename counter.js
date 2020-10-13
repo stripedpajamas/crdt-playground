@@ -32,11 +32,6 @@ class Counter {
         this.state[idx] = Math.max(this.state[idx], node)
       }
     })
-    this.state.forEach((node, idx) => {
-      if (typeof otherState[idx] !== 'undefined') {
-        this.state[idx] = Math.max(otherState[idx], node)
-      }
-    })
   }
 }
 
